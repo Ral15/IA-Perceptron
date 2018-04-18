@@ -1,6 +1,6 @@
 import random
 
-LIMIT_ITER = 100000
+LIMIT_ITER = 10000
 
 def gen_weights(dimensionality):
     weights = []
@@ -57,11 +57,11 @@ def perceptron_algorithm(training_set, test_set, weights, learning_rate, errors,
 
 def predict(test_set, weights, num_of_iterations):
     if num_of_iterations < LIMIT_ITER:
-        for test in test_set:
-            test.append(1.0) #bias
+        for points in test_set:
+            points.append(1.0) #bias
             prediction = 0.0
-            for i in range(0, len(test)):
-                prediction += float(test[i]) * weights[i]
+            for i in range(0, len(points)):
+                prediction += float(points[i]) * weights[i]
             if prediction >= 0:
                 prediction = 1
             else:

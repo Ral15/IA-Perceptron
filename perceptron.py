@@ -1,3 +1,11 @@
+# -----------------------------------------------------------------------------
+# Christian Ricardo Solís Cortés A01063685
+# Raúl Mar A00512318
+# Artificial Intelligence
+# Assignment: Neural Networks
+# Implementation of Perceptron
+# -----------------------------------------------------------------------------
+
 import random
 
 LIMIT_ITER = 10000
@@ -37,7 +45,7 @@ def perceptron_algorithm(training_set, test_set, weights, learning_rate, errors,
         for points in training_set:
             desired = points[-1]
             points = points[:-1]
-            points.append(1.0) 
+            points.append(1.0)
 
             desired_comp = [float(points[i]) * weights[i] for i in range(0, len(points))]
             desired_comp = sum(desired_comp)

@@ -55,7 +55,7 @@ def perceptron_algorithm(training_set, test_set, weights, learning_rate, errors,
         t += 1
     return weights, t
 
-def predict(weights, num_of_iterations):
+def predict(test_set, weights, num_of_iterations):
     if num_of_iterations < LIMIT_ITER:
         for test in test_set:
             test.append(1.0) #bias
@@ -74,7 +74,7 @@ def main():
     dimensionality, _, _, training_set, test_set = read_input()
     weights = gen_weights(dimensionality)
     new_weights, num_of_iterations = perceptron_algorithm(training_set, test_set, weights, 0.010, 1, 0)
-    predict(new_weights, num_of_iterations)
+    predict(test_set, new_weights, num_of_iterations)
 
 
 if __name__ == '__main__':
